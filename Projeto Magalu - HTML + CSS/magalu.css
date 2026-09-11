@@ -1,0 +1,233 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* PÁGINA */
+
+body {
+    width: 80%;
+    max-width: 1100px;
+
+    margin: 30px auto;
+
+    background-color: white;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    width: 100%;
+    height: 60px;
+
+    background-color: #2196f3;
+
+    display: flex;
+    align-items: center;
+
+    padding: 5px 12px;
+}
+
+
+/* LOGO */
+
+header img {
+    width: 175px;
+    height: auto;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+header nav {
+    margin-left: 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+/* LINKS DO MENU */
+
+header nav a {
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* QUANDO PASSAR O MOUSE */
+
+header nav a:hover {
+    color: yellow;
+}
+
+
+/* BARRINHAS ENTRE OS LINKS */
+
+header nav span {
+    color: white;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    width: 100%;
+}
+
+
+/* =========================
+   BANNER ROXO
+========================= */
+
+.banner {
+    width: 100%;
+    height: 260px;
+
+    background-color: #8b008b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* IMAGEM DO BANNER */
+
+.banner img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================
+   NOVIDADES
+========================= */
+
+.novidades {
+    width: 100%;
+
+    margin-top: 18px;
+}
+
+
+/* TÍTULO */
+
+.novidades h3 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.produtos {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: flex-start;
+}
+
+
+/* CADA PRODUTO */
+
+.produto {
+    width: 25%;
+    height: 170px;
+
+    padding: 5px;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    border-bottom: 1px solid #cccccc;
+}
+
+
+/* IMAGENS DOS PRODUTOS */
+
+.produto img {
+    width: 115px;
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* QUINTO PRODUTO */
+
+.produto:nth-child(5) {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    width: 100%;
+    height: 32px;
+
+    margin-top: 55px;
+
+    background-color: #2196f3;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 8px;
+}
+
+
+/* TEXTO DO RODAPÉ */
+
+footer p {
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
