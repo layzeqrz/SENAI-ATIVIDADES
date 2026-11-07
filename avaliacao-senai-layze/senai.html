@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jadoo - Viva e aproveite</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,sans-serif;color:#5E6282;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+h1,h2,.logo,.footer-logo{font-family:Volkhov,serif;color:#181E4B}
+.container{max-width:1200px}
+
+header{padding:20px 0}
+.logo{font-size:32px;font-weight:700}
+.nav-link{color:#212832!important;font-weight:500}
+.nav-link:hover{color:#DF6951!important}
+.signup{border:1px solid #212832;border-radius:5px;padding:8px 20px!important}
+.lang{border:0;background:transparent;font-weight:500}
+
+.hero{padding:50px 0 100px}
+.hero h1{font-size:70px;line-height:1.1;letter-spacing:-3px;margin:10px 0 30px}
+.subtitle{color:#DF6951;font-weight:700;font-size:18px;margin-bottom:10px}
+.hero-img{max-width:100%;border-radius:30px}
+.buttons{display:flex;align-items:center;gap:35px}
+.btn-main{background:#F1A501;color:#fff;padding:18px 27px;border-radius:10px}
+.play{display:flex;align-items:center;gap:15px;font-weight:500}
+.play span{width:52px;height:52px;border-radius:50%;background:#DF6951;color:#fff;display:flex;align-items:center;justify-content:center}
+
+section{padding:75px 0}
+h2{font-size:42px;margin-bottom:50px}
+
+.service{
+height:100%;padding:35px 25px;border-radius:35px;transition:.3s
+}
+.service:hover{box-shadow:0 30px 70px rgba(0,0,0,.08)}
+.service img{height:80px;max-width:100%;margin-bottom:25px}
+.service h3{font-size:20px;color:#1E1D4E}
+.service p{font-size:15px;line-height:1.7}
+
+.destination{
+overflow:hidden;border-radius:24px;background:#fff;
+box-shadow:0 20px 60px rgba(0,0,0,.08);transition:.3s
+}
+.destination:hover{transform:translateY(-8px)}
+.destination>img{width:100%;height:320px;object-fit:cover}
+.dest-info{padding:22px}
+.dest-head{display:flex;justify-content:space-between;font-weight:500}
+.dest-info p{margin:15px 0 0}
+
+.booking{padding:80px 0}
+.step{display:flex;gap:20px;align-items:center;margin:30px 0}
+.step img{width:48px;height:48px;object-fit:contain}
+.step b{font-size:16px}
+.step p{margin:5px 0;line-height:1.5}
+
+.trip{
+max-width:370px;margin:auto;padding:20px;border-radius:26px;
+box-shadow:0 30px 70px rgba(0,0,0,.08)
+}
+.trip img{width:100%;height:440px;object-fit:cover}
+
+.partners{text-align:center}
+.partners img{width:100%;max-width:1000px;opacity:.6}
+
+.testimonial{
+position:relative;padding:35px;border:1px solid #eee;border-radius:10px;
+box-shadow:0 30px 70px rgba(0,0,0,.06)
+}
+.testimonial img{
+width:68px;height:68px;border-radius:50%;object-fit:cover;
+position:absolute;top:-34px;left:-34px
+}
+.testimonial p{line-height:2;margin-bottom:25px}
+.testimonial b,.testimonial small{display:block}
+.dots{display:flex;gap:12px;margin-top:35px}
+.dots span{width:12px;height:12px;border-radius:50%;background:#ddd}
+.dots .active{background:#39425D}
+
+.subscribe>div{
+background:rgba(223,215,249,.2);padding:70px 30px;
+border-radius:120px 20px 20px;text-align:center
+}
+.subscribe h2{
+font-family:Poppins,sans-serif;color:#5E6282;font-size:30px;
+max-width:850px;margin:0 auto 40px
+}
+form{display:flex;gap:20px;max-width:620px;margin:auto}
+.email{position:relative;flex:1}
+.email i{position:absolute;left:25px;top:50%;transform:translateY(-50%)}
+.email input{
+width:100%;padding:22px 20px 22px 55px;border:0;border-radius:10px
+}
+form button{
+border:0;border-radius:10px;background:#FF8069;color:#fff;
+padding:18px 35px;font-weight:600
+}
+
+footer{padding:70px 0 30px}
+.footer-grid{
+display:grid;grid-template-columns:2fr repeat(3,1fr) 1.5fr;
+gap:35px;margin-bottom:60px
+}
+.footer-logo{font-size:42px}
+footer h4{color:#080809;font-size:20px}
+footer a{display:block;margin:10px 0}
+.social{display:flex;gap:15px}
+.social a{
+width:40px;height:40px;border-radius:50%;display:flex;
+align-items:center;justify-content:center;box-shadow:0 2px 10px #ddd
+}
+.social .active{background:linear-gradient(180deg,#B8D2CE,#C2ACE3);color:#fff}
+.apps{display:flex;gap:8px}
+.apps button{
+background:#000;color:#fff;border:0;border-radius:12px;padding:9px 12px
+}
+.copyright{text-align:center;font-size:14px}
+
+@media(max-width:992px){
+.hero{text-align:center}
+.hero h1{font-size:50px}
+.buttons{justify-content:center}
+.booking h2,.testimonials h2{text-align:center}
+.testimonial{margin:40px auto 0;max-width:550px}
+.testimonial img{left:50%;transform:translateX(-50%)}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:576px){
+.hero{padding:30px 0 60px}
+.hero h1{font-size:38px;letter-spacing:-1px}
+.buttons{flex-direction:column;gap:20px}
+section{padding:55px 0}
+h2{font-size:32px}
+.trip img{height:350px}
+.subscribe>div{padding:45px 20px;border-radius:60px 15px 15px}
+.subscribe h2{font-size:22px;line-height:1.5}
+form{flex-direction:column}
+.footer-grid{grid-template-columns:1fr}
+.apps{flex-wrap:wrap}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg container">
+<img src="Logo.png" alt="Logo">
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="menu">
+<ul class="navbar-nav align-items-center gap-lg-4">
+<li><a class="nav-link" href="#destinos">Destinos</a></li>
+<li><a class="nav-link" href="#hoteis">Hotéis</a></li>
+<li><a class="nav-link" href="#voos">Voos</a></li>
+<li><a class="nav-link" href="#reservas">Reservas</a></li>
+<li><a class="nav-link" href="#entrar">Entrar</a></li>
+<li><a class="nav-link signup" href="#inscrever-se">Inscrever-se</a></li>
+<li><select class="lang"><option>PT</option><option>EN</option></select></li>
+</ul>
+</div>
+</nav>
+</header>
+
+<main>
+
+<section class="hero container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="subtitle">MELHORES DESTINOS AO REDOR DO MUNDO</div>
+<h1>Viaje, aproveite e viva uma nova e plena vida</h1>
+
+<div class="buttons">
+<a href="#" class="btn-main">Saiba mais</a>
+<a href="#" class="play">
+<span><i class="fas fa-play"></i></span>Play Demonstração
+</a>
+</div>
+</div>
+
+<div class="col-lg-6 text-center mt-5 mt-lg-0">
+<img src="mulher-bagagem.png" class="hero-img" alt="Mulher viajante">
+</div>
+</div>
+</section>
+
+<section class="container text-center">
+<div class="subtitle">Categoria</div>
+<h2>Oferecemos os melhores serviços</h2>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+<div class="service">
+<img src="Group 48.png" alt="Calculated Weather">
+<h3>Calculated Weather</h3>
+<p>Construído, Wicket admira mais tempo a vaidade de Barton em si.</p>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="service">
+<img src="Group 51.png" alt="Best Flights">
+<h3>Best Flights</h3>
+<p>Absorvido na escuta. O portão do parque vende eles a oeste, difícil para o.</p>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="service">
+<img src="Group 50.png" alt="Best Flights">
+<h3>Best Flights</h3>
+<p>A vaidade de Barton em si. Preferido aos homens, estava absorvido na escuta.</p>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="service">
+<img src="Group 49.png" alt="Customization">
+<h3>Customization</h3>
+<p>Oferecemos serviços de aviação terceirizados para clientes militares.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="container text-center" id="destinos">
+<div class="subtitle">Mais vendido</div>
+<h2>Principais destinos</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="destination">
+<img src="roma.png" alt="Roma">
+<div class="dest-info">
+<div class="dest-head"><span>Roma, Itália</span><span>R$ 5,42 mil</span></div>
+<p><i class="fas fa-paper-plane"></i> Viagem de 10 dias</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="destination">
+<img src="outrolocal.png" alt="Londres">
+<div class="dest-info">
+<div class="dest-head"><span>Londres, Reino Unido</span><span>R$ 4,2 mil</span></div>
+<p><i class="fas fa-paper-plane"></i> Viagem de 12 dias</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="destination">
+<img src="Rectangle 14.png" alt="Europa">
+<div class="dest-info">
+<div class="dest-head"><span>Toda a Europa</span><span>R$ 15 mil</span></div>
+<p><i class="fas fa-paper-plane"></i> Viagem de 28 dias</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="booking container" id="reservas">
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+<div class="subtitle">Easy and Fast</div>
+<h2>Reserve sua próxima viagem em 3 Etapas Fáceis</h2>
+
+<div class="step">
+<img src="Group 7.png" alt="Passo 1">
+<div><b>Choose Destination</b>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p></div>
+</div>
+
+<div class="step">
+<img src="Group 12.png" alt="Passo 2">
+<div><b>Make Payment</b>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p></div>
+</div>
+
+<div class="step">
+<img src="Group 11.png" alt="Passo 3">
+<div><b>Reach Airport on Selected Date</b>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p></div>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="trip">
+<img src="Image-mulher-braços-abertos.png" alt="Viagem para Grécia">
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="partners container">
+<img src="parceiros.png" alt="Parceiros">
+</section>
+
+<section class="container testimonials">
+<div class="row align-items-center g-5">
+
+<div class="col-lg-5 text-center text-lg-start">
+<div class="subtitle">Depoimentos</div>
+<h2>O Que As Pessoas Dizem Sobre Nós.</h2>
+<div class="dots"><span class="active"></span><span></span><span></span></div>
+</div>
+
+<div class="col-lg-7">
+<div class="testimonial">
+<img src="https://i.pravatar.cc/150?img=11" alt="Mike Taylor">
+<p> "Na pastagem pintada das janelas, ainda assim suas festas expressas usam. Certamente, por último, ele mesmo sabia o que viria a seguir.
+Acreditou ou se desviou, não." </p>
+<b>Mike Taylor</b>
+<small>Lahore, Paquistão</small>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="container subscribe">
+<div>
+<h2>Inscreva-se para receber informações, últimas notícias e outras ofertas interessantes sobre a Jadoo.</h2>
+
+<form onsubmit="event.preventDefault();alert('Obrigado por se inscrever!')">
+<div class="email">
+<i class="far fa-envelope"></i>
+<input type="email" placeholder="Seu e-mail" required>
+</div>
+<button>Inscreva-se</button>
+</form>
+</div>
+</section>
+
+</main>
+
+<footer class="container">
+
+<div class="footer-grid">
+
+<div>
+<img src="Jadoo..png" alt="Jadoo">
+<p>Reserve sua viagem em um minuto, tenha controle total por muito mais tempo.</p>
+</div>
+
+<div>
+<h4>Empresa</h4>
+<a href="#">Sobre</a>
+<a href="#">Carreiras</a>
+<a href="#">Movel</a>
+</div>
+
+<div>
+<h4>Contato</h4>
+<a href="#">Ajuda/FAQ</a>
+<a href="#">Imprensa</a>
+<a href="#">Afiliados</a>
+</div>
+
+<div>
+<h4>Mais</h4>
+<a href="#">Taxas de companhias aeréas</a>
+<a href="#">Compahia aeréa</a>
+<a href="#">Dicas de tarifas baixas</a>
+</div>
+
+<div>
+<div class="social">
+<img src="facebook.png"  alt="facebook">
+<img src="instagram 1.png" alt="instagram">
+<img src="twitter.png" alt="twitter">
+</div>
+
+<div>
+<p class="copyright">Todos os direitos reservados | jadoo.com</p>
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
